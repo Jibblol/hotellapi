@@ -18,8 +18,10 @@ var db = {
 var router = jsonServer.router(db)
 var middlewares = jsonServer.defaults()
 
+var port = process.env.PORT || 8080;
+
 server.use(middlewares)
 server.use(router)
-server.listen(80, function () {
+server.listen(port, function () {
   console.log('JSON Server is running')
 })
